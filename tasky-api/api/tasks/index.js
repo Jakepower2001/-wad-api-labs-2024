@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { title, description, deadline, priority, done } = req.body;
+    const { title, description, deadline, priority, done, } = req.body;
     const newTask = {
         id: uuidv4(),
         title,

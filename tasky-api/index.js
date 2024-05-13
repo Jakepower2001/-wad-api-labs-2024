@@ -1,3 +1,5 @@
+// other imports
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import tasksRouter from './api/tasks';
@@ -17,7 +19,8 @@ const errHandler = (err, req, res, next) => {
 const app = express();
 
 const port = process.env.PORT;
-
+// Enable CORS for all requests
+app.use(cors());
 app.use(express.json());
 app.use('/api/tasks', tasksRouter);
 app.use(errHandler);
